@@ -9,3 +9,22 @@
 (if(> 5 3) 
     "not greater"
     "greater")
+
+(+ 1 2 3)        ; → 6（関数呼び出しとして評価）
+(quote (+ 1 2 3)) ; → (+ 1 2 3)（データとして返す）
+'(+ 1 2 3)       ; → (+ 1 2 3)（quote の短縮記法）
+
+(format t "Hello");コードとして実行される。
+
+'(format t "Hello")
+
+(eq nil '())      ; → T（同一オブジェクト）
+(null nil)        ; → T（nilかどうか判定）
+(null '())        ; → T
+(listp nil)       ; → T（nilはリストである）
+(atom nil)        ; → T（nilはアトムでもある！）
+
+(if nil "true" "false")  ; → "false"
+(if 0 "true" "false")    ; → "true"（0も真！）
+(if "" "true" "false")   ; → "true"（空文字列も真！）
+(if '() "true" "false")  ; → "false"（'() = nil）
