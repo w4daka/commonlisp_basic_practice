@@ -28,3 +28,15 @@
 (if 0 "true" "false")    ; → "true"（0も真！）
 (if "" "true" "false")   ; → "true"（空文字列も真！）
 (if '() "true" "false")  ; → "false"（'() = nil）
+
+;; cons: 新しいconsセルを生成
+(cons 'a 'b)        ; → (A . B)  ドット対
+(cons 'a '(b c))    ; → (A B C)  リスト
+(cons 'a nil)       ; → (A)      1要素のリスト
+
+;; car: 最初の要素（cons の左側）
+(car '(a b c))      ; → A
+
+;; cdr: 残りの要素（cons の右側）
+(cdr '(a b c))      ; → (B C)
+(cdr '(a))          ; → NIL
